@@ -1,0 +1,55 @@
+group = 'com.lx.rpc'
+description = 'lx-rpc'
+ext {
+    artifactId = 'lx-rpc'
+}
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+buildscript {
+    ext {
+        springBootVersion = '2.3.12.RELEASE'
+    }
+    repositories {
+        mavenLocal()
+        maven {
+            url = uri('http://maven.aliyun.com/nexus/content/groups/public')
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+
+    }
+}
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('http://maven.aliyun.com/nexus/content/groups/public')
+    }
+    mavenCentral()
+    // Use the plugin portal to apply community plugins in convention plugins.
+    gradlePluginPortal()
+}
+dependencies {
+
+    compileOnly 'org.springframework.boot:spring-boot-starter:2.3.12.RELEASE'
+    compileOnly 'org.springframework.boot:spring-boot-starter-aop:2.3.12.RELEASE'
+    compileOnly 'org.springframework.boot:spring-boot-starter-web:2.3.12.RELEASE'
+    compileOnly 'javax.validation:validation-api:2.0.1.Final'
+    compileOnly 'org.redisson:redisson:3.14.0'
+    compileOnly 'org.springframework.boot:spring-boot-starter-data-redis:2.3.12.RELEASE'
+    //lombok插件
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+    testCompile 'org.springframework.boot:spring-boot-starter-test:2.3.12.RELEASE'
+    testCompile 'org.springframework.boot:spring-boot-starter-web:2.3.12.RELEASE'
+    testCompile 'org.projectlombok:lombok:1.18.12'
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
