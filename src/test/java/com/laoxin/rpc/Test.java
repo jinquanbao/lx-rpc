@@ -5,7 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Test {
 
 
-    @org.junit.Test
+//    @org.junit.Test
     public void test(){
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext();
         ac.register(TestConfig.class);
