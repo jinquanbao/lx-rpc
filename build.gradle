@@ -1,4 +1,4 @@
-group = 'com.laoxin'
+group = 'com.github.jinquanbao'
 description = 'lx-rpc'
 
 apply plugin: 'java'
