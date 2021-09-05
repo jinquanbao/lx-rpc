@@ -1,8 +1,6 @@
-group = 'com.lx.rpc'
+group = 'com.laoxin'
 description = 'lx-rpc'
-ext {
-    artifactId = 'lx-rpc'
-}
+
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 buildscript {
